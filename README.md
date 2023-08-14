@@ -45,7 +45,7 @@ The cumulative return plot of the trading algorithm serving as baseline obtained
 
 <img src="Images/cumulative_returns_plot_baseline.png" alt="Baseline Plot" width="400" height="300">
 
-The strategy returns outperform the actual returns until 2016. Then it starts underperforming, and it does so consistently. It indicates that your trading strategy hasn't been as successful as simply holding the asset. This suggest that our strategy needs further refinement.   
+The strategy returns underperforms the actual returns between the third quarter of 2017 until the third quarter of 2018. Then it starts outperforming, and it does so consistently. The underperformance during the initial period could be due to the trading algorithm adapting to new market conditions. It might take time for the model to adjust its signals to align with the changing behavior of the asset. Also, the period of underperformance could coincide with overfitting or over-optimization of the strategy to specific historical data. The strategy might have been tailored too closely to the historical data during that period, leading to poor performance on new data.    
 
 - First refinement was increasing the training window as follows:
 
@@ -60,7 +60,7 @@ Cumulative return plot:
 
 <img src="Images/cumulative_returns_plot_tune1.png" alt="Classification Report - tune 1" width="400" height="300">
 
-Increasing the training window made the trading algorithm perform worse. One possible reason is overfitting. With a larger training window, the model might start capturing not only the genuine market trends but also short-term fluctuations, irregularities, or noise. As a result, the model might become overly sensitive to the specific historical data in the training window, leading to overfitting.
+Increasing the training window to 8 months made the trading algorithm perform worse. One possible reason is overfitting. With a larger training window, the model might start capturing not only the genuine market trends but also short-term fluctuations, irregularities, or noise. As a result, the model might become overly sensitive to the specific historical data in the training window, leading to overfitting.
 
 - Second tuning: Tune the trading algorithm by adjusting the SMA input features
 
@@ -77,6 +77,8 @@ Cumulative return plot:
 
 Increasing the SMA short window made the trading algorithm perfom slightly better that the original. The accuracy was slightly higher, 0.56(compared to 0.55 of the original). This could be due to the longer SMA short window smoothing out short-term price fluctuations and providing a more stable trend. This could potentially help the model differentiate between actual trends and noise, resulting in more reliable signals.
  With a longer SMA window, the trading algorithm might be less sensitive to minor price movements that could lead to false signals. This could help the algorithm avoid making unnecessary trades based on short-term market fluctuations.
+
+The set of parameters that best improved the trading algorithm returns was increasing the SMA short window.
 
 ---
 
