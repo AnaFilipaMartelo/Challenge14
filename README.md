@@ -43,9 +43,25 @@ Run each cell in the notebook sequentially to prepare the data, build the machin
 
 The cumulative return plot of the trading algorithm serving as baseline obtained is the following:
 
-![Baseline Plot](Images/cumulative_returns_plot_baseline.png)
+<img src="Images/cumulative_returns_plot_baseline.png" alt="Baseline Plot" width="400" height="300">
 
 The strategy returns outperform the actual returns until 2016. Then it starts underperforming, and it does so consistently. It indicates that your trading strategy hasn't been as successful as simply holding the asset. This suggest that our strategy needs further refinement.   
+
+First refinement was increasing the training window as follows:
+
+<img src="Images/tune1.png" alt="Increase Training Window" width="500" height="400">
+
+
+Classification Report: 
+
+<img src="Images/Classification_Report_tune1.png" alt="Classification Report - tune 1" width="400" height="300">
+
+Cumulative return plot:
+
+<img src="Images/cumulative_returns_plot_tune1.png" alt="Classification Report - tune 1" width="400" height="300">
+
+Increasing the training window made the trading algorithm perform worse. One possible reason is overfitting. With a larger training window, the model might start capturing not only the genuine market trends but also short-term fluctuations, irregularities, or noise. As a result, the model might become overly sensitive to the specific historical data in the training window, leading to overfitting.
+
 
 
 ---
