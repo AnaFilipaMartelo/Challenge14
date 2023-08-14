@@ -49,12 +49,12 @@ The strategy returns underperforms the actual returns between the third quarter 
 
 - First refinement was increasing the training window as follows:
 
-<img src="Images/tune1.png" alt="Increase Training Window" width="500" height="400">
+<img src="Images/tune1.png" alt="Increase Training Window" width="500" height="200">
 
 
 Classification Report: 
 
-<img src="Images/Classification_Report_tune1.png" alt="Classification Report - tune 1" width="400" height="300">
+<img src="Images/Classification_Report_tune1.png" alt="Classification Report - tune 1" width="400" height="150">
 
 Cumulative return plot:
 
@@ -64,12 +64,12 @@ Increasing the training window to 8 months made the trading algorithm perform wo
 
 - Second tuning: Tune the trading algorithm by adjusting the SMA input features
 
-<img src="Images/tune2.png" alt="Increase Training Window" width="500" height="400">
+<img src="Images/tune2.png" alt="Increase Training Window" width="500" height="75">
 
 
 Classification Report: 
 
-<img src="Images/Classification_Report_tune2.png" alt="Classification Report - tune 1" width="400" height="300">
+<img src="Images/Classification_Report_tune2.png" alt="Classification Report - tune 1" width="400" height="150">
 
 Cumulative return plot:
 
