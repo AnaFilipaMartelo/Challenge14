@@ -82,9 +82,18 @@ Precision 0.00, Recall 0.00: Precision and recall of 0.00 for class -1 (Sell) su
 Precision 0.56, Recall 1.00: Precision of 0.56 for class 1 (Buy) indicates that when the model predicts a buy signal, it is correct about 56% of the time. Recall of 1.00 means that the model is correctly identifying all actual buy events.
 
 This could happen if the model predictes all signals as 1(buy).
-Increasing the SMA short window might have smoothed out signals to the point where certain short-term trends are lost. The longer window might not capture quick fluctuations, leading to missed sell signals.. Also, since our dataset is imbalanced (e.g., fewer sell signals compared to buy signals), the model might be biased towards the majority class (buy signals), affecting precision and recall metrics.
+Increasing the SMA short window might have smoothed out signals to the point where certain short-term trends are lost. The longer window might not capture quick fluctuations, leading to missed sell signals. Also, since our dataset is imbalanced (e.g., fewer sell signals compared to buy signals), the model might be biased towards the majority class (buy signals), affecting precision and recall metrics.
 
 None of the set of parameters improved the trading algorithm returns. The original trading algorithm is the best.
+
+- In the last part of the notebook you'll evaluate a new machine learning classifier.
+
+Resulting cumulative return plot:
+
+<img src="Images/cumulative_returns_plot_model2.png" alt="Classification Report - tune 1" width="400" height="300">
+
+
+This new model performed worse than the provided baseline model. It startes outperforming and then, beginning of 2017, it underperforms the actual returns. It also performed worse than the tuned trading algorithm. After analyzing the classification report it is possible that the model predicted all signals as -1(sell), indicating a bias. 
 
 ---
 
